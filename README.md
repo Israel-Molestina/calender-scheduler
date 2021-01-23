@@ -1,1 +1,1 @@
-# calender-scheduler
+# calendar-scheduler
