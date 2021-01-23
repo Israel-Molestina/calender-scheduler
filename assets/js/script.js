@@ -1,10 +1,14 @@
 // Set starting variables to use luxon
 let DateTime = luxon.DateTime;
+var arr = [];
 
 let today = DateTime.local();
-let hour = today.hour;
-console.log(hour);
+let hourNow = today.hour;
+console.log(hourNow);
 console.log(today);
+
+// var textSec = $("<textarea>").addClass("textarea col-8 description");
+
 
 // variable that holds objects for the times. 
 var hours = [
@@ -36,7 +40,7 @@ var hours = [
     {hour: "5pm",
      mhour: "17"},
 
-]
+];
 
 $(document).ready(function() {
 
@@ -67,23 +71,42 @@ $(document).ready(function() {
         var btnSec = $("<button>").addClass("saveBtn col-2");
         row.append(btnSec);
 
-        if (hour < hours.mhour) {
+        // If statments for settig future past and present classes dependant on the time
+        if (hourNow < hours.mhour) {
             $(textSec).addClass("future");
         }
 
-        if (hour > hours.mhour) {
+        if (hourNow > hours.mhour) {
             $(textSec).addClass("past");
         }
 
-        else if (hour = hours.mhour) {
+        else if (hourNow = hours.mhour) {
             $(textSec).addClass("present");
         }
+
+        $(".saveBtn").on("click", function() {
+
+            var key = hours.hour;
+            console.log(key);
+            var value = textSec.val();
+            console.log(value);
+        
+            localStorage.setItem(key, value);
+
+          
+
+            for (var i = 0; i < localStorage.length; i++) {
+                    
+                textSec.val(value);
+        
+            };
+            
+            
+
+        });
 
     });
 
     
 
 });
-
-
-
