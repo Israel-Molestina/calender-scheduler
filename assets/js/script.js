@@ -1,14 +1,10 @@
 // Set starting variables to use luxon
 let DateTime = luxon.DateTime;
-var arr = [];
 
 let today = DateTime.local();
 let hourNow = today.hour;
 console.log(hourNow);
 console.log(today);
-
-// var textSec = $("<textarea>").addClass("textarea col-8 description");
-
 
 // variable that holds objects for the times. 
 var hours = [
@@ -84,24 +80,19 @@ $(document).ready(function() {
             $(textSec).addClass("present");
         }
 
+        // variables for localStorage use
+        var key = hours.hour;
+        var value = textSec.val();
+
+        // Sets the text in boxes from local storage
+        var toDo = localStorage.getItem(key);
+        console.log(toDo);
+        $(textSec).val(toDo);
+
+        // button event that saves input into local storage
         $(".saveBtn").on("click", function() {
 
-            var key = hours.hour;
-            console.log(key);
-            var value = textSec.val();
-            console.log(value);
-        
             localStorage.setItem(key, value);
-
-          
-
-            for (var i = 0; i < localStorage.length; i++) {
-                    
-                textSec.val(value);
-        
-            };
-            
-            
 
         });
 
