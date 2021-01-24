@@ -82,7 +82,7 @@ $(document).ready(function() {
 
         // variables for localStorage use
         var key = hours.hour;
-        var value = textSec.val();
+        // var value = textSec.val();
 
         // Sets the text in boxes from local storage
         var toDo = localStorage.getItem(key);
@@ -91,6 +91,10 @@ $(document).ready(function() {
 
         // button event that saves input into local storage
         $(".saveBtn").on("click", function() {
+
+            // variables for localStorage use
+            var key = hours.hour;
+            var value = textSec.val();
 
             localStorage.setItem(key, value);
 
