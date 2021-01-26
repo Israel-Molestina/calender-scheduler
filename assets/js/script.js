@@ -1,12 +1,9 @@
 // Set starting variables to use luxon
 let DateTime = luxon.DateTime;
-
 let today = DateTime.local();
 let hourNow = today.hour;
 console.log(hourNow);
 console.log(today);
-
-var index = 0;
 
 // variable that holds objects for the times. 
 var hours = [
@@ -57,19 +54,17 @@ $(document).ready(function() {
         $(".container").append(row);
 
         // created and appended section for time to row
-        var timeSec = $("<section>").addClass("hour col-2").attr("id", "time-" + index);
+        var timeSec = $("<section>").addClass("hour col-2")
         timeSec.text(hours.hour);
         row.append(timeSec);
 
         // created and appended textarea
-        var textSec = $("<textarea>").addClass("textarea col-8 description").attr("id", "text-" + index);
+        var textSec = $("<textarea>").addClass("textarea col-8 description")
         row.append(textSec);
 
         // created and appended buttons
-        var btnSec = $("<button>").addClass("saveBtn col-2").attr("id", "btn-" + index);
+        var btnSec = $("<button>").addClass("saveBtn col-2")
         row.append(btnSec);
-        index++;
-        console.log(index);
 
         // If statments for settig future past and present classes dependant on the time
         if (hourNow < hours.mhour) {
