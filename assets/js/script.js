@@ -68,7 +68,7 @@ $(document).ready(function() {
         var img = $("<i>").addClass("far fa-save fa-lg")
         btnSec.append(img);
 
-        // If statments for settig future past and present classes dependant on the time
+        // If statements for setting  future past and present classes depending on the time
         if (hourNow < hours.mhour) {
             $(textSec).addClass("future");
         }
