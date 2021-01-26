@@ -52,8 +52,6 @@ $(document).ready(function() {
 
     hours.forEach(function(hours) {
 
-        console.log(hours);
-
         // created and appended row to container
         var row = $("<article>").addClass("row");
         $(".container").append(row);
