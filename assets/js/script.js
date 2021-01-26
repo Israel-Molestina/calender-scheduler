@@ -66,6 +66,9 @@ $(document).ready(function() {
         var btnSec = $("<button>").addClass("saveBtn col-2")
         row.append(btnSec);
 
+        var img = $("<i>").addClass("far fa-save fa-lg")
+        btnSec.append(img);
+
         // If statments for settig future past and present classes dependant on the time
         if (hourNow < hours.mhour) {
             $(textSec).addClass("future");
