@@ -66,6 +66,7 @@ $(document).ready(function() {
         var btnSec = $("<button>").addClass("saveBtn col-2")
         row.append(btnSec);
 
+        // create and appended save icons
         var img = $("<i>").addClass("far fa-save fa-lg")
         btnSec.append(img);
 
