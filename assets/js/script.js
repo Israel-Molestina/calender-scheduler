@@ -37,8 +37,6 @@ var hours = [
 
 ];
 
-
-
 $(document).ready(function() {
 
     // Makes current date appear on screen
