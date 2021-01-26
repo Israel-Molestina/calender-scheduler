@@ -6,6 +6,8 @@ let hourNow = today.hour;
 console.log(hourNow);
 console.log(today);
 
+var index = 0;
+
 // variable that holds objects for the times. 
 var hours = [
 
@@ -38,6 +40,8 @@ var hours = [
 
 ];
 
+
+
 $(document).ready(function() {
 
     // Makes current date appear on screen
@@ -55,17 +59,19 @@ $(document).ready(function() {
         $(".container").append(row);
 
         // created and appended section for time to row
-        var timeSec = $("<section>").addClass("hour col-2");
+        var timeSec = $("<section>").addClass("hour col-2").attr("id", "time-" + index);
         timeSec.text(hours.hour);
         row.append(timeSec);
 
         // created and appended textarea
-        var textSec = $("<textarea>").addClass("textarea col-8 description");
+        var textSec = $("<textarea>").addClass("textarea col-8 description").attr("id", "text-" + index);
         row.append(textSec);
 
         // created and appended buttons
-        var btnSec = $("<button>").addClass("saveBtn col-2");
+        var btnSec = $("<button>").addClass("saveBtn col-2").attr("id", "btn-" + index);
         row.append(btnSec);
+        index++;
+        console.log(index);
 
         // If statments for settig future past and present classes dependant on the time
         if (hourNow < hours.mhour) {
@@ -82,26 +88,26 @@ $(document).ready(function() {
 
         // variables for localStorage use
         var key = hours.hour;
-        // var value = textSec.val();
+        console.log(key);
 
         // Sets the text in boxes from local storage
         var toDo = localStorage.getItem(key);
         console.log(toDo);
         $(textSec).val(toDo);
 
-        // button event that saves input into local storage
-        $(".saveBtn").on("click", function() {
-
-            // variables for localStorage use
-            var key = hours.hour;
-            var value = textSec.val();
-
-            localStorage.setItem(key, value);
-
-        });
-
     });
 
+    $(document).on('click', '.row', function() {
+        
+        console.log($(this));
     
+        // variables for localStorage use
+        var key = $(this)[0].firstChild.firstChild.data;
+        console.log(key);
+        var value = $(this)[0].firstElementChild.nextSibling.value;
+    
+        localStorage.setItem(key, value);
+    
+    })
 
 });
