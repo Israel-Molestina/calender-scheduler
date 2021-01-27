@@ -77,7 +77,7 @@ $(document).ready(function() {
             $(textSec).addClass("past");
         }
 
-        else if (hourNow = hours.mhour) {
+        else if (hourNow == hours.mhour) {
             $(textSec).addClass("present");
         }
 
