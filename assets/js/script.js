@@ -92,6 +92,7 @@ $(document).ready(function() {
 
     });
 
+    // click event function to store saved events in local storage
     $(document).on('click', '.row', function() {
         
         console.log($(this));
