@@ -34,7 +34,7 @@ var hours = [
 
     {hour: "5pm",
      mhour: "17"},
-
+     
 ];
 
 $(document).ready(function() {
@@ -73,11 +73,11 @@ $(document).ready(function() {
             $(textSec).addClass("future");
         }
 
-        if (hourNow > hours.mhour) {
+        else if (hourNow > hours.mhour) {
             $(textSec).addClass("past");
         }
 
-        else if (hourNow == hours.mhour) {
+        else {
             $(textSec).addClass("present");
         }
 
