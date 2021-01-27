@@ -52,7 +52,7 @@ $(document).ready(function() {
         $(".container").append(row);
 
         // created and appended section for time to row
-        var timeSec = $("<section>").addClass("hour col-2")
+        var timeSec = $("<section>").addClass("hour col-2 pt-4")
         timeSec.text(hours.hour);
         row.append(timeSec);
 
